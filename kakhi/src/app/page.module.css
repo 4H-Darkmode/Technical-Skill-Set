@@ -46,7 +46,6 @@
 .trafficlightorange {
   width: 20px;
   margin: 5px;
-
   height: 20px;
   background-color: orange;
   border-radius: 50%;
@@ -57,7 +56,6 @@
   width: 20px;
   height: 20px;
   margin: 5px;
-
   background-color: green;
   border-radius: 50%;
   box-sizing: border-box;
@@ -72,10 +70,93 @@
   padding-left: 20%;
 }
 
-.bashtext{
-  font-family: Menlo, monospace;
+.bashtext {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
   font-size: 14px;
   color: black;
   margin: 0;
   margin-left: 10px;
+}
+
+.terminaldate {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0;
+  animation: typing 3s ease-out 2.5s both;
+  color: green;
+  width: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+}
+
+.terminaltextcoder
+{
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0;
+  animation: typing 3s ease-out 3.5s both;
+  color: green;
+  width: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+}
+
+.terminaltextcdir
+{
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0;
+  animation: typing 3s ease-out 4.5s both;
+  color: green;
+  width: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+}
+
+.terminaltextnpm
+{
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0;
+  animation: typing 3s ease-out 6s both;
+  color: green;
+  width: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+}
+
+.terminaltextrouting1 {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0;
+  animation: typing 2s ease-out 7.5s both;
+  color: green;
+  width: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+}
+
+.terminaltextrouting2 {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0;
+  animation: typing 2s ease-out 8.5s both;
+  color: green;
+  width: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+}
+
+.terminaltextrouting3 {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0;
+  animation: typing 3s ease-out 9.5s both;
+  color: green;
+  width: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%;
+  }
 }
