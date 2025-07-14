@@ -1,0 +1,180 @@
+.defaultdiv {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-color: #3C3D37;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: red;
+
+}
+
+.terminalheader {
+  min-width: 25%;
+  width: 30%;
+  height: 300px;
+  background-color: #e8e8e8;
+  display: flex;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 200px;
+}
+
+.mainpart {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+}
+
+.kakhiimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0 0 10px 10px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.welcometext {
+  font-size: 7rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.2em; /* Fügt Abstand zwischen allen Buchstaben hinzu */
+}
+
+.welcometext span {
+  display: inline-block;
+  font-size: 7rem;
+  margin: 0;
+  margin-right: 0.1em; /* Zusätzlicher Abstand rechts von jedem Buchstaben */
+  animation: wave 2s ease-in-out infinite;
+  background: linear-gradient(to right, #9929EA, #CC66DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Für das Leerzeichen zwischen "Welcome" und "to" */
+.wave-text span:nth-child(8) {
+  animation-delay: 1.4s;
+  margin-right: 0.1em; /* Gleich wie .welcometext span */
+}
+
+/* Für das Leerzeichen zwischen "to" und "my" */
+.wave-text span:nth-child(11) {
+  animation-delay: 2s;
+  margin-right: 0.3em; /* Größerer Abstand für das Leerzeichen */
+}
+
+.wave-text span:nth-child(1) {
+  animation-delay: 0s;
+}
+.wave-text span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.wave-text span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.wave-text span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.wave-text span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.wave-text span:nth-child(6) {
+  animation-delay: 1s;
+}
+.wave-text span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.wave-text span:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.wave-text span:nth-child(9) {
+  animation-delay: 1.6s;
+  margin-left: 9%;
+}
+.wave-text span:nth-child(10) {
+  animation-delay: 1.8s;
+}
+.wave-text span:nth-child(11) {
+  animation-delay: 2s;
+}
+.wave-text span:nth-child(12) {
+  animation-delay: 2.2s;
+}
+.wave-text span:nth-child(13) {
+  animation-delay: 2.4s;
+}
+.wave-text span:nth-child(14) {
+  animation-delay: 2.6s;
+}
+.wave-text span:nth-child(15) {
+  animation-delay: 2.8s;
+}
+.wave-text span:nth-child(16) {
+  animation-delay: 3s;
+}
+.wave-text span:nth-child(17) {
+  animation-delay: 3.2s;
+}
+.wave-text span:nth-child(18) {
+  animation-delay: 3.4s;
+}
+.wave-text span:nth-child(19) {
+  animation-delay: 3.6s;
+}
+.wave-text span:nth-child(20) {
+  animation-delay: 3.8s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.infotext{
+  font-size: 6rem;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: white;
+}

@@ -145,7 +145,7 @@
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 3s ease-out 9.5s both;
+  animation: typing 3s ease-out 9.5s both, 0s 12.5s forwards;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
@@ -158,5 +158,41 @@
 
   to {
     width: 100%;
+  }
+}
+
+.link
+{
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0;
+  animation: typing 3s ease-out 9.5s both, post-animation 0s 12.5s forwards;
+  color: green;
+  width: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+}
+
+@keyframes post-animation {
+  0% {
+    color: green;
+  }
+  100% {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.link span {
+  animation: letter-color 1s forwards;
+  display: inline-block;
+}
+
+@keyframes letter-color {
+  from {
+    color: green;
+  }
+  to {
+    color: white;
   }
 }

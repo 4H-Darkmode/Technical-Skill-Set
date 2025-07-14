@@ -1,9 +1,15 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import { FaHome } from "react-icons/fa";
 import { getTerminalDate } from "../utils/terminal-date";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  
+  const router = useRouter();
+
   return (
     <div className={styles.defaultdiv}>
       <div className={styles.terminalheader}>
@@ -38,7 +44,13 @@ export default function Home() {
           next dev
         </h1>
         <h1 className={styles.terminaltextrouting3}>
-          ready - started server on 0.0.0.0:3000, url: http://localhost:3000/kakhi
+          ready - started server on 0.0.0.0:3000, url: 
+          <span
+            className={styles.link}
+            onClick={() => router.push("/kakhi")}
+          >
+            http://localhost:3000/kakhi
+          </span>
         </h1>
       </section>
     </div>
