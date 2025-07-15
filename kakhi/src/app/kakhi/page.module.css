@@ -2,179 +2,208 @@
   width: 100%;
   min-height: 100vh;
   height: auto;
-  background-color: #3C3D37;
+  background-color: #0a0a0a;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   scroll-behavior: smooth;
   overflow-y: auto;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: red;
-
-}
-
-.terminalheader {
-  min-width: 25%;
-  width: 30%;
-  height: 300px;
-  background-color: #e8e8e8;
-  display: flex;
-  border-radius: 10px 10px 0 0;
-  margin-bottom: 200px;
-}
-
-.mainpart {
-  width: 100%;
-  height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.image {
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.info {
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: black;
-}
-
-.kakhiimage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0 0 10px 10px;
-  max-width: 100%;
-  max-height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .welcometext {
-  font-size: 7rem;
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 0.2em; /* Fügt Abstand zwischen allen Buchstaben hinzu */
-}
-
-.welcometext span {
-  display: inline-block;
-  font-size: 7rem;
-  margin: 0;
-  margin-right: 0.1em; /* Zusätzlicher Abstand rechts von jedem Buchstaben */
-  animation: wave 2s ease-in-out infinite;
-  background: linear-gradient(to right, #9929EA, #CC66DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Für das Leerzeichen zwischen "Welcome" und "to" */
-.wave-text span:nth-child(8) {
-  animation-delay: 1.4s;
-  margin-right: 0.1em; /* Gleich wie .welcometext span */
-}
-
-/* Für das Leerzeichen zwischen "to" und "my" */
-.wave-text span:nth-child(11) {
-  animation-delay: 2s;
-  margin-right: 0.3em; /* Größerer Abstand für das Leerzeichen */
-}
-
-.wave-text span:nth-child(1) {
-  animation-delay: 0s;
-}
-.wave-text span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.wave-text span:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.wave-text span:nth-child(4) {
-  animation-delay: 0.6s;
-}
-.wave-text span:nth-child(5) {
-  animation-delay: 0.8s;
-}
-.wave-text span:nth-child(6) {
-  animation-delay: 1s;
-}
-.wave-text span:nth-child(7) {
-  animation-delay: 1.2s;
-}
-.wave-text span:nth-child(8) {
-  animation-delay: 1.4s;
-}
-.wave-text span:nth-child(9) {
-  animation-delay: 1.6s;
-  margin-left: 9%;
-}
-.wave-text span:nth-child(10) {
-  animation-delay: 1.8s;
-}
-.wave-text span:nth-child(11) {
-  animation-delay: 2s;
-}
-.wave-text span:nth-child(12) {
-  animation-delay: 2.2s;
-}
-.wave-text span:nth-child(13) {
-  animation-delay: 2.4s;
-}
-.wave-text span:nth-child(14) {
-  animation-delay: 2.6s;
-}
-.wave-text span:nth-child(15) {
-  animation-delay: 2.8s;
-}
-.wave-text span:nth-child(16) {
-  animation-delay: 3s;
-}
-.wave-text span:nth-child(17) {
-  animation-delay: 3.2s;
-}
-.wave-text span:nth-child(18) {
-  animation-delay: 3.4s;
-}
-.wave-text span:nth-child(19) {
-  animation-delay: 3.6s;
-}
-.wave-text span:nth-child(20) {
-  animation-delay: 3.8s;
-}
-
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-
-.infotext{
-  font-size: 6rem;
-  font-weight: 400;
-  text-align: center;
-  letter-spacing: 0.1em;
+  z-index: 1;
   color: white;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  text-align: center;
+}
+
+.subtext {
+  z-index: 1;
+  color: white;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: bold;
+  text-align: center;
+}
+
+.hero {
+  width: min(85%, 500px);
+  height: min(35vh, 400px);
+  outline: solid 2px #00ff88;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(0, 255, 136, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  box-sizing: border-box;
+}
+
+.herocontent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.herocontent h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #00ff88;
+  text-shadow: 0 0 20px #00ff88;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.herocontent p {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  line-height: 1.4;
+}
+
+.hero h1::before {
+  content: "> ";
+  color: #ff0088;
+  vertical-align: middle;
+}
+
+.glitchcontainer {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch {
+  color: #00ff88;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: bold;
+  animation: simpleGlitch 3s infinite;
+  margin: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+@keyframes simpleGlitch {
+  0%,
+  90%,
+  100% {
+    text-shadow: 0 0 5px #00ff88;
+  }
+  10% {
+    text-shadow: -2px 2px #ff0040, 2px -2px #00d4ff;
+    transform: translate(-1px, 1px);
+  }
+  20% {
+    text-shadow: 2px -2px #ff0040, -2px 2px #00d4ff;
+    transform: translate(1px, -1px);
+  }
+  30% {
+    text-shadow: -1px 1px #ff0040, 1px -1px #00d4ff;
+    transform: translate(-1px, -1px);
+  }
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+  z-index: -1;
+}
+
+/* Mobile Phones (bis 480px) */
+@media screen and (max-width: 480px) {
+  .defaultdiv {
+    padding: 0.5rem;
+  }
+
+  .hero {
+    width: 90%;
+    height: 40vh;
+    margin: 0.5rem;
+  }
+
+  .herocontent {
+    padding: 0.5rem;
+  }
+}
+
+/* Tablets Portrait (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .hero {
+    width: 80%;
+    height: 38vh;
+  }
+}
+
+/* Tablets Landscape & kleine Laptops (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    width: 70%;
+    height: 35vh;
+  }
+}
+
+/* Laptops (1025px - 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .hero {
+    width: 60%;
+    height: 35vh;
+    max-width: 600px;
+  }
+}
+
+/* Normale Monitore (1441px - 1920px) */
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+  .hero {
+    width: 50%;
+    height: 35vh;
+    max-width: 650px;
+  }
+}
+
+/* Große Monitore & Curved Monitore (1921px - 2560px) */
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  .hero {
+    width: 40%;
+    height: 35vh;
+    max-width: 700px;
+  }
+}
+
+/* Ultra-breite Monitore (2561px+) */
+@media screen and (min-width: 2561px) {
+  .hero {
+    width: 35%;
+    height: 35vh;
+    max-width: 750px;
+  }
+}
+
+/* Spezielle Anpassungen für sehr hohe Bildschirme */
+@media screen and (min-height: 1200px) {
+  .hero {
+    height: 30vh;
+  }
+}
+
+/* Anpassungen für sehr breite Curved Monitore */
+@media screen and (min-width: 3440px) {
+  .hero {
+    width: 30%;
+    max-width: 800px;
+  }
 }
