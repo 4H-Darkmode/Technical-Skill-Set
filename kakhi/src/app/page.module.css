@@ -1,25 +1,29 @@
 .defaultdiv {
   width: 100%;
   height: 100vh;
-  background-color: #3C3D37;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #0a0a0a;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .terminal {
-  min-width: 25%;
-  width: 30%;
-  height: 30%;
-  min-height: 25%;
+  width: min(90%, 800px);
+  height: min(50vh, 400px);
   background-color: black;
+  box-shadow: 0 0 50px rgba(0, 255, 136, 0.3);
+  border-radius: 0 0 10px 10px;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .terminalheader {
-  min-width: 25%;
-  width: 30%;
-  height: 3%;
+  width: min(90%, 800px);
+  height: 40px;
   background-color: #e8e8e8;
   display: flex;
   border-radius: 10px 10px 0 0;
@@ -35,27 +39,27 @@
 }
 
 .trafficlightred {
-  width: 20px;
-  height: 20px;
-  margin: 5px;
+  width: clamp(12px, 2vw, 20px);
+  height: clamp(12px, 2vw, 20px);
+  margin: 3px;
   background-color: red;
   border-radius: 50%;
   box-sizing: border-box;
 }
 
 .trafficlightorange {
-  width: 20px;
-  margin: 5px;
-  height: 20px;
+  width: clamp(12px, 2vw, 20px);
+  height: clamp(12px, 2vw, 20px);
+  margin: 3px;
   background-color: orange;
   border-radius: 50%;
   box-sizing: border-box;
 }
 
 .trafficlightgreen {
-  width: 20px;
-  height: 20px;
-  margin: 5px;
+  width: clamp(12px, 2vw, 20px);
+  height: clamp(12px, 2vw, 20px);
+  margin: 3px;
   background-color: green;
   border-radius: 50%;
   box-sizing: border-box;
@@ -67,12 +71,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 20%;
+  padding-left: 10px;
 }
 
 .bashtext {
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
-  font-size: 14px;
+  font-size: clamp(10px, 1.5vw, 14px);
   color: black;
   margin: 0;
   margin-left: 10px;
@@ -82,94 +86,97 @@
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 3s ease-out 2.5s both;
+  animation: typing 2s ease-out 2.5s both;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 
-.terminaltextcoder
-{
+.terminaltextcoder {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 3s ease-out 3.5s both;
+  animation: typing 2s ease-out 3.5s both;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 
-.terminaltextcdir
-{
+.terminaltextcdir {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 3s ease-out 4.5s both;
+  animation: typing 2s ease-out 4.5s both;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 
-.terminaltextnpm
-{
+.terminaltextnpm {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 3s ease-out 6s both;
+  animation: typing 2s ease-out 6s both;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 
 .terminaltextrouting1 {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 2s ease-out 7.5s both;
+  animation: typing 1.5s ease-out 7.5s both;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 
 .terminaltextrouting2 {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 2s ease-out 8.5s both;
+  animation: typing 1.5s ease-out 8.5s both;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 
 .terminaltextrouting3 {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 3s ease-out 9.5s both, 0s 12.5s forwards;
+  animation: typing 2s ease-out 9.5s both, 0s 11.5s forwards;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 
 @keyframes typing {
   from {
     width: 0
   }
-
   to {
     width: 100%;
   }
 }
 
-.link
-{
+.link {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0;
-  animation: typing 3s ease-out 9.5s both, post-animation 0s 12.5s forwards;
+  animation: typing 2s ease-out 9.5s both, post-animation 0s 11.5s forwards;
   color: green;
   width: 0;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', monospace;
+  font-size: clamp(10px, 1.5vw, 14px);
 }
 
 @keyframes post-animation {
@@ -194,5 +201,131 @@
   }
   to {
     color: white;
+  }
+}
+
+/* Mobile Phones (bis 480px) */
+@media screen and (max-width: 480px) {
+  .defaultdiv {
+    padding: 0.5rem;
+  }
+
+  .terminal {
+    width: 95%;
+    height: 60vh;
+    padding: 0.5rem;
+  }
+
+  .terminalheader {
+    width: 95%;
+    height: 35px;
+  }
+
+  .bashtrafficlight {
+    padding-left: 5px;
+  }
+
+  .bashheader {
+    padding-left: 5px;
+  }
+
+  .terminaldate,
+  .terminaltextcoder,
+  .terminaltextcdir,
+  .terminaltextnpm,
+  .terminaltextrouting1,
+  .terminaltextrouting2,
+  .terminaltextrouting3,
+  .link {
+    animation-duration: 1.5s;
+  }
+
+  .terminaltextrouting1 {
+    animation-delay: 7s;
+  }
+
+  .terminaltextrouting2 {
+    animation-delay: 8s;
+  }
+
+  .terminaltextrouting3 {
+    animation-delay: 9s;
+  }
+
+  .link {
+    animation-delay: 9s;
+  }
+}
+
+/* Tablets Portrait (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .terminal {
+    width: 85%;
+    height: 55vh;
+  }
+
+  .terminalheader {
+    width: 85%;
+  }
+
+  .terminaldate,
+  .terminaltextcoder,
+  .terminaltextcdir,
+  .terminaltextnpm,
+  .terminaltextrouting1,
+  .terminaltextrouting2,
+  .terminaltextrouting3,
+  .link {
+    animation-duration: 1.8s;
+  }
+}
+
+/* Tablets Landscape & kleine Laptops (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .terminal {
+    width: 70%;
+    height: 50vh;
+  }
+
+  .terminalheader {
+    width: 70%;
+  }
+}
+
+/* Laptops (1025px - 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .terminal {
+    width: 60%;
+    height: 50vh;
+  }
+
+  .terminalheader {
+    width: 60%;
+  }
+}
+
+/* Normale Monitore (1441px - 1920px) */
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+  .terminal {
+    width: 50%;
+    height: 50vh;
+  }
+
+  .terminalheader {
+    width: 50%;
+  }
+}
+
+/* Große Monitore & Curved Monitore (1921px+) */
+@media screen and (min-width: 1921px) {
+  .terminal {
+    width: 40%;
+    height: 50vh;
+    max-width: 1000px;
+  }
+
+  .terminalheader {
+    width: 40%;
+    max-width: 1000px;
   }
 }

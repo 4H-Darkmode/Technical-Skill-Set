@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { FaHome } from "react-icons/fa";
 import { getTerminalDate } from "../utils/terminal-date";
 import { useRouter } from "next/navigation";
+import ParticlesBackground from "@/components/particles";
 
 export default function Home() {
   
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <div className={styles.defaultdiv}>
+      <ParticlesBackground />
       <div className={styles.terminalheader}>
         <section className={styles.bashtrafficlight}>
           <div className={styles.trafficlightred}></div>
