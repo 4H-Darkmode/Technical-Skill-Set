@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef, useCallback } from "react";
 
 declare global {
@@ -11,6 +10,8 @@ declare global {
 
 const ParticlesBackground: React.FC = () => {
   const particlesRef = useRef<HTMLDivElement>(null);
+  const isLoadingRef = useRef(false);
+  const isInitializedRef = useRef(false);
 
   const getParticleConfig = useCallback(() => {
     const width = window.innerWidth;
@@ -88,49 +89,103 @@ const ParticlesBackground: React.FC = () => {
     };
   }, []);
 
-  const loadParticles = useCallback(async () => {
-    await import("particles.js");
-
-    if (particlesRef.current) {
-      // Entferne vorherige Instanz falls vorhanden
-      if (window.pJSDom && window.pJSDom.length > 0) {
-        window.pJSDom.forEach((dom: any) => {
-          if (dom.pJS) {
+  const destroyParticles = useCallback(() => {
+    if (window.pJSDom && window.pJSDom.length > 0) {
+      window.pJSDom.forEach((dom: any) => {
+        if (dom && dom.pJS && dom.pJS.fn && dom.pJS.fn.vendors) {
+          try {
             dom.pJS.fn.vendors.destroypJS();
+          } catch (e) {
+            console.warn("Error destroying particles:", e);
           }
-        });
-        window.pJSDom = [];
-      }
-
-      // Lade neue Partikel-Konfiguration
-      window.particlesJS("particles-js", getParticleConfig());
+        }
+      });
+      window.pJSDom = [];
     }
-  }, [getParticleConfig]);
+    
+    // Zusätzliche Cleanup - entferne canvas falls vorhanden
+    const canvas = document.querySelector('#particles-js canvas');
+    if (canvas) {
+      canvas.remove();
+    }
+    
+    isInitializedRef.current = false;
+  }, []);
+
+  const loadParticles = useCallback(async () => {
+    if (isLoadingRef.current || !particlesRef.current) return;
+    
+    isLoadingRef.current = true;
+    
+    try {
+      // Warte einen Frame für DOM-Updates
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      
+      // Lade particles.js falls noch nicht geladen
+      if (!window.particlesJS) {
+        await import("particles.js");
+      }
+      
+      // Warte bis particlesJS verfügbar ist
+      if (!window.particlesJS) {
+        throw new Error("particlesJS not loaded");
+      }
+      
+      // Zerstöre alte Instanz
+      destroyParticles();
+      
+      // Warte einen weiteren Frame
+      await new Promise(resolve => requestAnimationFrame(resolve));
+      
+      // Initialisiere neue Instanz
+      window.particlesJS("particles-js", getParticleConfig());
+      isInitializedRef.current = true;
+      
+    } catch (error) {
+      console.error("Error loading particles:", error);
+    } finally {
+      isLoadingRef.current = false;
+    }
+  }, [getParticleConfig, destroyParticles]);
 
   useEffect(() => {
-    loadParticles();
+    // Verzögere die Initialisierung um sicherzustellen, dass DOM bereit ist
+    const timer = setTimeout(() => {
+      loadParticles();
+    }, 100);
 
-    // Responsive Handler
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [loadParticles]);
+
+  useEffect(() => {
+    // Responsive Handler mit Debouncing
+    let resizeTimer: NodeJS.Timeout;
+    
     const handleResize = () => {
-      setTimeout(() => {
-        loadParticles();
-      }, 100);
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (isInitializedRef.current) {
+          loadParticles();
+        }
+      }, 250);
     };
 
     window.addEventListener("resize", handleResize);
 
     return () => {
+      clearTimeout(resizeTimer);
       window.removeEventListener("resize", handleResize);
-      // Cleanup bei Unmount
-      if (window.pJSDom && window.pJSDom.length > 0) {
-        window.pJSDom.forEach((dom: any) => {
-          if (dom.pJS) {
-            dom.pJS.fn.vendors.destroypJS();
-          }
-        });
-      }
     };
   }, [loadParticles]);
+
+  // Cleanup bei Unmount
+  useEffect(() => {
+    return () => {
+      destroyParticles();
+    };
+  }, [destroyParticles]);
 
   return (
     <div

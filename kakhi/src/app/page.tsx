@@ -6,10 +6,16 @@ import { FaHome } from "react-icons/fa";
 import { getTerminalDate } from "../utils/terminal-date";
 import { useRouter } from "next/navigation";
 import ParticlesBackground from "@/components/particles";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   
   const router = useRouter();
+  const [terminalDate, setTerminalDate] = useState<string>("");
+
+  useEffect(() => {
+    setTerminalDate(getTerminalDate());
+  }, []);
 
   return (
     <div className={styles.defaultdiv}>
@@ -27,7 +33,7 @@ export default function Home() {
       </div>
       <section className={styles.terminal}>
         <h1 className={styles.terminaldate}>
-          latest login: {getTerminalDate()}
+          latest login: {terminalDate}
         </h1>
         <h1 className={styles.terminaltextcoder}>
           coder x ThinkPad:~ coder-x — -zsh$
